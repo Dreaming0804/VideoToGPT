@@ -1,0 +1,11 @@
+VideoToGPT 0.3 第三方组件信息（发布前审查清单）
+- yt-dlp (https://github.com/yt-dlp/yt-dlp)：注意Windows预编译版可能包含GPL许可组件。
+- FFmpeg (https://ffmpeg.org/legal.html)：具体适用LGPL/GPL取决于所分发的编译版本。
+- faster-whisper (https://github.com/SYSTRAN/faster-whisper)
+- CTranslate2 (https://github.com/OpenNMT/CTranslate2)
+- Whisper模型 (https://github.com/openai/whisper)
+- PyAV (https://github.com/PyAV-Org/PyAV)
+- Playwright (https://playwright.dev/python/)
+- PyInstaller (https://pyinstaller.org/)
+真正公开分发之前应当核对实际随包二进制版本及对应版权和许可证文本，按许可证要求随附通知及相关源码或获取方式。
+此文件只是提示清单，不代替许可证正文。
