@@ -14,12 +14,16 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-      - uses: android-actions/setup-android@v3
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.10.2'
-      - run: sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
-      - run: gradle --no-daemon assembleDebug
+      - name: Install Android platform
+        run: |
+          echo "Android SDK: ${ANDROID_HOME:-$ANDROID_SDK_ROOT}"
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager "platforms;android-35" "build-tools;35.0.0"
+      - name: Compile APK
+        run: gradle --no-daemon assembleDebug
       - uses: actions/upload-artifact@v4
         with:
           name: VideoToGPT-Android-APK
